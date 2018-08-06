@@ -1,8 +1,8 @@
-package de.slashgarbage.example;
+package org.oracle.assignment;
 
 public class FrameFactory {
 
-	public static Frame createFrame(String grameFrame, int index) throws Exception {
+	public static Frame createFrame(String grameFrame, int index) throws IllegalArgumentException {
 		if (grameFrame.length() == 1) {
 			if (grameFrame.charAt(0) == 'X') {				
 				return new StrikeFrame();
@@ -66,7 +66,7 @@ public class FrameFactory {
 		throw new IllegalArgumentException("invalid chars");
 	}
 
-	public static Frame createFrame(String grameFrame) throws Exception {
+	public static Frame createFrame(String grameFrame) throws IllegalArgumentException {
 		return createFrame(grameFrame, -1);
 	}
 

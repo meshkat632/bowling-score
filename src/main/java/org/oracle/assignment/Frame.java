@@ -1,4 +1,4 @@
-package de.slashgarbage.example;
+package org.oracle.assignment;
 
 public interface Frame {
 	public void computeScore();
