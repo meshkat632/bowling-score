@@ -21,6 +21,8 @@ public class BowlingTest {
       gameFrameStream.forEach(frame ->{
          System.out.println("frame:" + frame);
       });
+      
+      
       /*
       IntStream intStream = testString.chars();
       Stream<Character> characterStream = testString.chars().mapToObj(c -> (char) c);

@@ -1,26 +1,13 @@
 package de.slashgarbage.example;
 
-public class Frame {
-    private int firstBalls;
-    private int secondBalls;
-    private int thirdBalls;
-    private FrameType frameType;
+public interface Frame {
+	public void computeScore();
 
-    Frame(int firstBalls,int secondBalls){
-        this(firstBalls, secondBalls,0);
-    }
+	public void setPreviousFrame(Frame previousFrame);
 
-    Frame(int firstBalls,int secondBalls,int thirdBalls){
-        this.firstBalls = firstBalls;
-        if(firstBalls == 10) {
-            frameType = FrameType.STRIKE;
-        }else if(firstBalls +secondBalls == 10) {
-            frameType = FrameType.SPARE;
-        }else {
-            frameType = FrameType.NORMAL;
-            this.secondBalls = secondBalls;
-            this.thirdBalls = thirdBalls;
-        }
-    }
+	public void setNextFrame(Frame newFrame);
 
+	public int getScore();
+
+	public Frame getNextFrame();
 }
