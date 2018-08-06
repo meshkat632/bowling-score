@@ -1,14 +1,11 @@
-package org.oracle.assignment;
+package org.oracle.assignment.impl;
 
-public class LastFrame implements Frame {
+public class LastFrame extends AbstractFrame {
 
 	private int firstBalls;
 	private int secondBalls;
 	private int thirdBalls;
-	private int score;
-	private Frame previousFrame;
-	private Frame nextFrame = null;
-
+	
 	LastFrame(int firstBalls, int secondBalls, int thirdBalls) {
 		this.firstBalls = firstBalls;
 		this.secondBalls = secondBalls;
@@ -22,28 +19,7 @@ public class LastFrame implements Frame {
 			scoreFromPrevious = previousFrame.getScore();
 		this.score = scoreFromPrevious + firstBalls + secondBalls + thirdBalls;
 	}
-
-	@Override
-	public void setPreviousFrame(Frame previousFrame) {
-		this.previousFrame = previousFrame;
-	}
-
-	@Override
-	public void setNextFrame(Frame nextFrame) {
-		this.nextFrame = nextFrame;
-
-	}
-
-	@Override
-	public int getScore() {
-		return score;
-	}
-
-	@Override
-	public Frame getNextFrame() {
-		return null;
-	}
-
+	
 	public int getFirstTwoBallsCount() {
 		return firstBalls + secondBalls;
 	}

@@ -1,16 +1,7 @@
-package org.oracle.assignment;
+package org.oracle.assignment.impl;
 
-public class StrikeFrame implements Frame {
-
+public class StrikeFrame extends AbstractFrame {	
 	
-	
-	private int score;
-	private Frame previousFrame;
-	private Frame nextFrame;
-	
-	StrikeFrame(){
-		
-	}
 	@Override
 	public void computeScore() {
 	
@@ -47,25 +38,7 @@ public class StrikeFrame implements Frame {
 	
 	}
 	
-	@Override
-	public void setPreviousFrame(Frame previousFrame) {
-		this.previousFrame = previousFrame;
-		
-	}
-	
-	@Override
-	public void setNextFrame(Frame nextFrame) {
-		this.nextFrame = nextFrame;
-		
-	}
-	@Override
-	public int getScore() {		
-		return score;
-	}
-	@Override
-	public Frame getNextFrame() {		
-		return nextFrame;
-	}
+
 	 
 
 }

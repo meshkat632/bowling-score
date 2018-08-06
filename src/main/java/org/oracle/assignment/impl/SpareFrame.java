@@ -1,13 +1,10 @@
-package org.oracle.assignment;
+package org.oracle.assignment.impl;
 
-public class SpareFrame implements Frame {
+public class SpareFrame extends AbstractFrame{
 
 	private int firstBalls;
 	private int secondBalls;
-	private int score;
-	private Frame previousFrame;
-	private Frame nextFrame;
-
+	
 	SpareFrame(int firstBalls) {
 		this.firstBalls = firstBalls;
 		this.secondBalls = 10 - firstBalls;
@@ -38,29 +35,7 @@ public class SpareFrame implements Frame {
 	int getFirstBalls() {
 		return firstBalls;
 	}
-
-	@Override
-	public void setPreviousFrame(Frame previousFrame) {
-		this.previousFrame = previousFrame;
-
-	}
-
-	@Override
-	public void setNextFrame(Frame nextFrame) {
-		this.nextFrame = nextFrame;
-
-	}
-
-	@Override
-	public int getScore() {
-		return score;
-	}
-
-	@Override
-	public Frame getNextFrame() {
-		return nextFrame;
-	}
-
+	
 	public int getBallsCount() {
 		return firstBalls + secondBalls;
 	}
