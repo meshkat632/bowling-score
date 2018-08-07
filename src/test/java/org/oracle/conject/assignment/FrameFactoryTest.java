@@ -1,15 +1,15 @@
-package org.oracle.assignment;
+package org.oracle.conject.assignment;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import org.oracle.assignment.def.Frame;
-import org.oracle.assignment.exceptions.IllegalFrameDataException;
-import org.oracle.assignment.impl.FrameFactory;
-import org.oracle.assignment.impl.LastFrame;
-import org.oracle.assignment.impl.SimpleFrame;
-import org.oracle.assignment.impl.SpareFrame;
-import org.oracle.assignment.impl.StrikeFrame;
+import org.oracle.conject.assignment.def.Frame;
+import org.oracle.conject.assignment.exceptions.IllegalFrameDataException;
+import org.oracle.conject.assignment.impl.FrameFactory;
+import org.oracle.conject.assignment.impl.LastFrame;
+import org.oracle.conject.assignment.impl.SimpleFrame;
+import org.oracle.conject.assignment.impl.SpareFrame;
+import org.oracle.conject.assignment.impl.StrikeFrame;
 public class FrameFactoryTest {
 	@Test
 	public void createFrame_simpleFrame() throws IllegalFrameDataException {

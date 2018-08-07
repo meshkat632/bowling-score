@@ -1,4 +1,4 @@
-package org.oracle.assignment.exceptions;
+package org.oracle.conject.assignment.exceptions;
 
 public class IllegalFrameDataException extends IllegalArgumentException {
 

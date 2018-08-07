@@ -1,4 +1,6 @@
-package org.oracle.assignment.impl;
+package org.oracle.conject.assignment.impl;
+
+import org.oracle.conject.assignment.Constants;
 
 public class SpareFrame extends AbstractFrame{
 
@@ -7,7 +9,7 @@ public class SpareFrame extends AbstractFrame{
 	
 	SpareFrame(int firstBalls) {
 		this.firstBalls = firstBalls;
-		this.secondBalls = 10 - firstBalls;
+		this.secondBalls = Constants.MAX_PIN - firstBalls;
 	}
 
 	@Override
@@ -18,16 +20,16 @@ public class SpareFrame extends AbstractFrame{
 			scoreFromPrevious = previousFrame.getScore();
 
 		if (nextFrame instanceof SimpleFrame) {
-			this.score = scoreFromPrevious + ((SimpleFrame) nextFrame).getFirstBalls() + 10;
+			this.score = scoreFromPrevious + ((SimpleFrame) nextFrame).getFirstBalls() + Constants.MAX_PIN;
 		}
 		if (nextFrame instanceof StrikeFrame) {
-			this.score = scoreFromPrevious + 10 + 10;
+			this.score = scoreFromPrevious + Constants.MAX_PIN + Constants.MAX_PIN;
 		}
 		if (nextFrame instanceof SpareFrame) {
-			this.score = scoreFromPrevious + ((SpareFrame) nextFrame).getFirstBalls() + 10;
+			this.score = scoreFromPrevious + ((SpareFrame) nextFrame).getFirstBalls() + Constants.MAX_PIN;
 		}
 		if (nextFrame instanceof LastFrame) {
-			this.score = scoreFromPrevious + ((LastFrame) nextFrame).getFirstBalls() + 10;
+			this.score = scoreFromPrevious + ((LastFrame) nextFrame).getFirstBalls() + Constants.MAX_PIN;
 		}
 
 	}

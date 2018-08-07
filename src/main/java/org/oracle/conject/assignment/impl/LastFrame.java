@@ -1,4 +1,4 @@
-package org.oracle.assignment.impl;
+package org.oracle.conject.assignment.impl;
 
 public class LastFrame extends AbstractFrame {
 

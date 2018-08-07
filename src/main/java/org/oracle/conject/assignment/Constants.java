@@ -1,4 +1,4 @@
-package org.oracle.assignment;
+package org.oracle.conject.assignment;
 
 public class Constants {
 	

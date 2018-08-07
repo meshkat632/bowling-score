@@ -1,16 +1,25 @@
-package org.oracle.assignment;
+package org.oracle.conject.assignment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.oracle.assignment.def.Frame;
-import org.oracle.assignment.exceptions.IllegalFrameDataException;
-import org.oracle.assignment.impl.FrameFactory;
-import org.oracle.assignment.impl.LastFrame;
+import org.oracle.conject.assignment.def.Frame;
+import org.oracle.conject.assignment.exceptions.IllegalFrameDataException;
+import org.oracle.conject.assignment.impl.FrameFactory;
+import org.oracle.conject.assignment.impl.LastFrame;
 
-public class Bowling {
+public class BowlingGame {
+	
+	private List<Frame> frames;
+	private int finalScore;
+	
+	private BowlingGame(List<Frame> frames, int finalScore){
+		this.frames = frames;
+		this.finalScore = finalScore;
+	}
+	
 
-	public static int play(String gameFrame) throws IllegalFrameDataException {
+	public static BowlingGame play(String gameFrame) throws IllegalFrameDataException {
 		// validate input
 		String[] gameFrames = gameFrame.split("\\|");
 		if(gameFrames.length < 10) throw new IllegalFrameDataException("There must be 10 frames.");
@@ -31,7 +40,7 @@ public class Bowling {
 		}
 
 		// compute the score
-		return frames.stream().filter(frame -> {
+		int finalScore = frames.stream().filter(frame -> {
 			frame.computeScore();
 			if (frame instanceof LastFrame)
 				return true;
@@ -39,6 +48,13 @@ public class Bowling {
 				return false;
 		}).findFirst().get().getScore();
 		
+		return new BowlingGame(frames, finalScore);
+		
 
+	}
+
+
+	public int finalScore() {		
+		return finalScore;
 	}
 }

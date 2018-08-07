@@ -1,4 +1,4 @@
-package org.oracle.assignment.def;
+package org.oracle.conject.assignment.def;
 
 public interface Frame {
 	public void computeScore();

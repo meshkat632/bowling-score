@@ -1,6 +1,6 @@
-package org.oracle.assignment.impl;
+package org.oracle.conject.assignment.impl;
 
-import org.oracle.assignment.def.Frame;
+import org.oracle.conject.assignment.def.Frame;
 
 public abstract class AbstractFrame implements Frame {
 	protected int score;

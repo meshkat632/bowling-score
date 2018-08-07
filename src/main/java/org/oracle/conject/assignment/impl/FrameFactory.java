@@ -1,8 +1,8 @@
-package org.oracle.assignment.impl;
+package org.oracle.conject.assignment.impl;
 
-import org.oracle.assignment.Constants;
-import org.oracle.assignment.def.Frame;
-import org.oracle.assignment.exceptions.IllegalFrameDataException;
+import org.oracle.conject.assignment.Constants;
+import org.oracle.conject.assignment.def.Frame;
+import org.oracle.conject.assignment.exceptions.IllegalFrameDataException;
 
 public class FrameFactory {
 
