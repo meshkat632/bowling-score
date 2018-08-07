@@ -9,8 +9,19 @@ import org.oracle.conject.assignment.exceptions.IllegalFrameDataException;
 public class BowlingTest {
 
 	@Test
+	public void spare_print_scores() throws IllegalFrameDataException {
+		
+		BowlingGame game = BowlingGame.play("14|45|6/|5/|X|01|7/|6/|X|2/6|"); 
+		assertEquals(133, game.finalScore());
+		assertEquals("5|14|29|49|60|61|77|97|117|133|",game.scores());
+		
+	}
+	
+	@Test
 	public void spare_test_plays() throws IllegalFrameDataException {
-		assertEquals(10, BowlingGame.play("3/|00|00|00|00|00|00|00|00|00|").finalScore());
+		BowlingGame game = BowlingGame.play("3/|00|00|00|00|00|00|00|00|00|"); 
+		assertEquals(10, game.finalScore());
+		assertEquals("10|10|10|10|10|10|10|10|10|10|",game.scores());
 	}
 
 	@Test
@@ -98,6 +109,7 @@ public class BowlingTest {
 	public void acceptance_test_misc() throws IllegalFrameDataException {
 		assertEquals(167, BowlingGame.play("X|7/|90|X|08|8/|06|X|X|X81|").finalScore());
 		assertEquals(133, BowlingGame.play("14|45|6/|5/|X|01|7/|6/|X|2/6|").finalScore());
+		assertEquals("5|14|29|49|60|61|77|97|117|133|",BowlingGame.play("14|45|6/|5/|X|01|7/|6/|X|2/6|").scores());
 
 	}
 

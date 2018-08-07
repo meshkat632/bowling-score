@@ -2,6 +2,7 @@ package org.oracle.conject.assignment;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 import org.oracle.conject.assignment.def.Frame;
 import org.oracle.conject.assignment.exceptions.IllegalFrameDataException;
@@ -56,5 +57,13 @@ public class BowlingGame {
 
 	public int finalScore() {		
 		return finalScore;
+	}
+
+
+	public String scores() {
+		return frames.stream().map(frame -> {
+			return ""+frame.getScore();
+		}).reduce("", (a, b) -> a + b+"|");
+		
 	}
 }
